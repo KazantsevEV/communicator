@@ -14,13 +14,7 @@ RESOURCES += qml.qrc
 android {
     QT += androidextras
     DISTFILES += \
-    Android/AndroidManifest.xml \
-    Android/gradle/wrapper/gradle-wrapper.jar \
-    Android/gradlew \
-    Android/res/values/libs.xml \
-    Android/build.gradle \
-    Android/gradle/wrapper/gradle-wrapper.properties \
-    Android/gradlew.bat
+    Android/src/com/example/myPackage/SpeechRecognition.java
 
     ANDROID_PACKAGE_SOURCE_DIR = $$PWD/Android
 }
@@ -30,4 +24,8 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    Android/src/com/example/myPackage/StatusBarActivity.java
+    android/AndroidManifest.xml \
+    android/res/values/libs.xml \
+    android/build.gradle
+
+ANDROID_PACKAGE_SOURCE_DIR = $$PWD/android
