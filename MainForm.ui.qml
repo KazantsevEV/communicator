@@ -9,8 +9,8 @@ Item {
 
     Button {
         id: btnStart
-        x: 260
-        y: 105
+        x: 162
+        y: 180
         width: 76
         height: 40
         text: qsTr("Старт")
