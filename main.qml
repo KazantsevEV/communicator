@@ -9,7 +9,7 @@ Window {
     Connections {
         target: recognition
         onSetText: {
-            labelResult.text = labelResult.text + text
+            labelResult.text = text
         }
     }
 
