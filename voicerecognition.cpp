@@ -36,11 +36,12 @@ void VoiceRecognition::start()
 
     //    QAndroidJniObject intent = QAndroidJniObject::callStaticObjectMethod("startRecognition");
     //    QtAndroid::startIntentSender(intent, 5, m_result);
-
-
+#else
+    //qDebug()<<"!";
+    emit setText("123");
 #endif
 }
-
+#if defined(Q_OS_ANDROID)
 void AndroidActivityResultReceiver::handleActivityResult(int receiverRequestCode, int resultCode, const QAndroidJniObject &data)
 {
     if(data.isValid()) {
@@ -62,3 +63,4 @@ void AndroidActivityResultReceiver::handleActivityResult(int receiverRequestCode
         qDebug()<<"receiverRequestCode"<<receiverRequestCode<<"resultCode"<<resultCode;
     }
 }
+#endif

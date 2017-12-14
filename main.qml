@@ -1,31 +1,26 @@
 import QtQuick 2.6
 import QtQuick.Window 2.2
+import QtQuick.Controls 2.1
 
 Window {
     visible: true
     width: 640
     height: 480
     title: qsTr("Hello World")
+
     Connections {
         target: recognition
+
         onSetText: {
-            labelResult.text = text
+            mainForm.textRecognition.text = text;
         }
     }
 
     MainForm {
+        id: mainForm
         anchors.fill: parent
-        Text {
-            id: labelResult
-            anchors.left: parent.left
-            anchors.right: parent.right
-            anchors.top: parent.top
-            height: 500
-        }
-        btnStart.width: 300
-        btnStart.height: 100
-        btnStart.onClicked: {
-            recognition.start()
+        btnStartRecognition.onClicked: {
+            recognition.start();
         }
 
     }
